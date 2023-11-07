@@ -6,15 +6,15 @@ int NeighboursOfCell(bool matrix[SIZE][SIZE], int width, int height, int cell_x,
   int number_of_neighbours = 0;
 
   for (int i = cell_y - 1; i <= cell_y + 1; ++i) {
-      for (int j = cell_x - 1; j <= cell_x + 1; ++j) {
-          if (!(i == cell_y && j == cell_x)) {
-              int temp_x = (j + width) % width, temp_y = (i + height) % height;
+    for (int j = cell_x - 1; j <= cell_x + 1; ++j) {
+      if (!(i == cell_y && j == cell_x)) {
+        int temp_x = (j + width) % width, temp_y = (i + height) % height;
 
-              if (matrix[temp_y][temp_x]) {
-                  ++number_of_neighbours;
-              }
-          }
+        if (matrix[temp_y][temp_x]) {
+          ++number_of_neighbours;
+        }
       }
+    }
   }
 
   return number_of_neighbours;
